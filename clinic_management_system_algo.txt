@@ -1,0 +1,66 @@
+NAME: Shivani Rathore
+
+Algorithm:
+1:Create a model name Patient.cs and one Program.cs
+
+2:Declare all fields as privately , we can access using properties or setter/getter method. (in Patient.cs)
+	2.1-Declare all fields as private and define getters and setters for each and declare the registrationId field as private so
+ 	 once set it can be edited as that is the desired behavior.
+
+3:In main method , create switch case for creating menu driven program for CRUD operations (in Program.cs) - 
+	add,display,search delete,edit and select option for operation you want.
+	Swtich Case- 1.    Add a new user
+		     2.    Edit user Info
+		     3.    Delete User
+		     4.    Display All users
+		     5.    Search User via name or phoneNumber
+
+4: Create method AddPatient() - Use collection Stack/Queue for adding patients (in Patient.cs)
+	Storing Patients: For a proper patient Management System the appropriate data structure to store patients would be a Queue/Priority Queue.
+	For the solution of this problem as no functionalities of Queue are required we can use ArrayList.
+   		 Creating a Patient: Steps:
+                      4.1- Create a new instance of the patient class.
+		      4.2- Take all relevant information (Do validation)and assign it to the new patient instance.
+			(If they try to create a patient using an already present registrationID, give a prompt user already
+
+	code - 
+	Queue<Patient> patient = new Queue<Patient>();	
+
+        // Add patients to the list.
+        patient.Enqueue(new Patient() {RegisterNo=1,name="Sam", dob="08/08/2000", gender="male", bloodGroup="B+", address="Pune" , phoneNumber="7756814567"});
+	patient.Enqueue(new Patient() {RegisterNo=2,name="Shivani", dob="07/08/1999", gender="female", bloodGroup="A+" , address="Mumbai" , phoneNumber="8756814567"});
+        patient.Enqueue(new Patient() {RegisterNo=3,name="Abhi", dob="09/10/1998", gender="male", bloodGroup="B+" , address="Delhi" , phoneNumber="9986814567"});
+        patient.Enqueue(new Patient() {RegisterNo=4,name="Shubman", dob="09/08/1999", gender="male", bloodGroup="A+" ,address="Mumbai" , phoneNumber="7956814568"});
+        patient.Enqueue(new Patient() {RegisterNo=5,name="Mahi", dob="07/07/1982", gender="male",bloodGroup="A+" , address="Pune" , phoneNumber="8656814500"});
+		
+5: Create method DisplayPatient() -Use for-each loop for displaying Patient Details. (in Patient.cs)
+
+	Code- 
+	Console.WriteLine();
+        foreach (Patient p in patient)
+        {
+            Console.WriteLine(p);
+        }       
+
+6: Create method searchPatient(Double phoneNumber) - Use List.Find(phoneNumber) or Use Queue.Contains(phoneNumber) 
+	for finding details for patient via phoneNumber( which will be unique).
+
+7: Create Method DeletePatient() for deleting Patient information - Use Dequeue()
+
+8: Add one options- Do you want exit? if you want to repeat these operatations .
+	Call all functions and menu operations from main method for clean Console applications
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
